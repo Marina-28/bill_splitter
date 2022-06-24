@@ -8,3 +8,9 @@ else:
         friends_list.append(input())
     friends_dict = dict.fromkeys(friends_list, 0)
     print(friends_dict)
+
+    bill = int(input("Enter the total bill value: "))
+    new_value = round(bill/number_of_friend, 2)
+    for key in friends_dict:
+        friends_dict[key] = new_value
+    print(friends_dict)
