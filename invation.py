@@ -18,6 +18,15 @@ else:
     # print(friends_dict)
 
     if input('Do you want to use the "Who is lucky?" feature? Write Yes/No:\n') == "Yes":
-        print(f'{friends_list[random.randint(0, number_of_friend - 1)]} is the lucky one!')
+        lucky_man = friends_list[random.randint(0, number_of_friend - 1)]
+        print(f'{lucky_man} is the lucky one!')
+        new_value = round(bill/(number_of_friend - 1), 2)
+        for key in friends_dict:
+            if key == lucky_man:
+                continue
+            friends_dict[key] = new_value
+        friends_dict[lucky_man] = 0
     else:
         print("No one is going to be lucky")
+    for key in friends_dict:
+        print(f'{key} - {friends_dict[key]}')
